@@ -1,47 +1,15 @@
-//exercicio 1//
-let titulo = document.getElementById("titulo")
-titulo.textContent = "Aula de DOM"
+let input = document.getElementById("nome");
+let msg = document.getElementById("mensagem");
 
-//exercicio 2//
-titulo.style.color="blue"
-
-//exercicio 3//
-let paragrafo = document.querySelector(".texto");
-    paragrafo.style.color = "red"
-
-//exercicio 4//
-let paragrafos = document.querySelectorAll(".texto");
-for(let i = 0; i < paragrafos.length; i++){
-    paragrafos[i].style.color = "green"
+function validar(){
+    let valor = input.value.trim();
+    if(valor != ""){
+        msg.textContent = "Nome válido"
+        msg.style.color = "green"
+    }
+    else{
+        msg.textContent = ("Campo obrigatório");
+        msg.style.color = "red"
+    }
 }
-
-//exercicio 5//
-let caixas = document.getElementsByClassName("caixa");
-
-for (let i = 0; i < caixas.length; i++) {
- caixas[i].style.background = "yellow";
-};
-
-//exercicio 6//
-for (let i = 0; i < caixas.length; i++) {
- caixas[i].style.fontWeight = "bold";
-};
-
-//exercicio 7//
-let spans = document.getElementsByTagName("span");
-
-for (let i = 0; i < spans.length; i++) {
-spans[i].textContent = "Alterado"
-};
-
-//exercicio 8//
-titulo.style.color = "purple"
-
-for(let i = 0; i < paragrafos.length; i++){
-    paragrafos[i].style.color = "orange"
-};
-
-for (let i = 0; i < caixas.length; i++) {
- caixas[i].style.background = "grey";
-};
-
+input.addEventListener("input", validar)
